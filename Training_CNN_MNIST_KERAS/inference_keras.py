@@ -6,7 +6,9 @@ from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, Flatten
 import matplotlib.pyplot as plt
 
 def build_model():
-    """Rebuild the model architecture as defined in the training notebook."""
+    """Rebuilding the whole model architecture is required as the model didn't saved in proper .keras rather it is saved in .weights.best.keras"""
+    # Weights-only file (.weights.best.keras) has no architecture info,
+    # so model must be rebuilt manually before loading weights.
     model = Sequential()
     # CONV_1: 32 filters, 3x3 kernel, same padding, ReLU, 28x28x1 input
     model.add(Conv2D(32, kernel_size=(3, 3), padding='same', activation='relu', input_shape=(28, 28, 1)))
