@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import os
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from PIL import Image
@@ -11,7 +12,9 @@ st.title("Dog vs Cat Classifier")
 # Load the model
 @st.cache_resource
 def load_classification_model():
-    return load_model('./model/dog_cat_cnn_model.keras')
+    # Use absolute path to ensure the model is found regardless of where streamlit is run from
+    model_path = os.path.join(os.path.dirname(__file__), 'model', 'dog_cat_cnn_model.keras')
+    return load_model(model_path)
 
 try:
     model = load_classification_model()
