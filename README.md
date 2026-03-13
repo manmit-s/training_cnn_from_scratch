@@ -24,11 +24,25 @@ Located in `dog-cat_Classifier/`, this project focuses on building a robust bina
   - **Data Augmentation**: (Rotation, Zoom, Flip, Shear).
   - **Batch Normalization**: Stabilized training across convolutional layers.
 - **Model Checkpointing**: Used `ModelCheckpoint` to ensure the best weights are saved even if later epochs overfit.
+- **Streamlit Deployment**: The application is deployed and available for real-time inference via a Streamlit interface.
 
-## 🛠️ Requirements & Tools
+## Getting Started
+
+### Streamlit Application
+To run the Dog vs. Cat Classifier locally:
+1. Navigate to the project folder:
+   ```bash
+   cd dog-cat_Classifier
+   ```
+2. Run the Streamlit app:
+   ```bash
+   streamlit run streamlit_app.py
+   ```
+
+## �🛠️ Requirements & Tools
 
 - **Frameworks**: TensorFlow/Keras, PyTorch
-- **Libraries**: NumPy, Matplotlib, Scipy
+- **Libraries**: NumPy, Matplotlib, Scipy, Streamlit
 - **Environment**: Conda (`aiENV`), Windows with GPU acceleration (RTX 3050 detected).
 
 ## 📓 Usage
